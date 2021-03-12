@@ -12,6 +12,8 @@ services:
       - ./mosquitto/data:/mosquitto/data
       - ./mosquitto/logs:/mosquitto/logs
       - ./mosquitto/config:/mosquitto/config:ro
+      - ./mosquitto/data/pwfile:/etc/mosquitto/pwfile
+      - ./mosquitto/data:/var/lib/mosquitto
     environment:
       - FR=Europe/Paris
       - DOMAIN= ${DOMAINS}
