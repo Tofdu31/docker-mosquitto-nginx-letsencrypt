@@ -1,4 +1,4 @@
-docker-mumble-NGINX-Let's Encrypt
+docker-mosquitto-Nginx-Let's Encrypt
 =============
 
 
@@ -6,7 +6,7 @@ docker-mumble-NGINX-Let's Encrypt
     <img src="Mosquitto_Nginx_Letsencrypt.png" alt="mosquitto with Nginx and Let's Encrypt" >
 
 <p align="center">
-  Docker image for Mumble server.
+  mosquitto with Nginx and Let's Encrypt.
 </p>
 
 INSTRUCTION
