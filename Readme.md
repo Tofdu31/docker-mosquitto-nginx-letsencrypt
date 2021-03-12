@@ -51,7 +51,7 @@ mosquitto_passwd -b pwfile PUT_USERNAME_HERE PUT-THE_PASSWORD_HERE
 
 cat pwfile
 
-username:$6$IuF7JUzS1k/QoF3y$YpiClom7/==
+toto:$7$101$J4+cvW2a1TjTmQ1E$peQDIUUn/==
 
 exit
 
