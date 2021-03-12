@@ -13,6 +13,7 @@ services:
       - ./mosquitto/logs:/mosquitto/logs
       - ./mosquitto/config:/mosquitto/config:ro
     environment:
+      - FR=Europe/Paris
       - DOMAIN= ${DOMAINS}
       - VIRTUAL_HOST= ${DOMAINS}
       - LETSENCRYPT_HOST= ${DOMAINS}
