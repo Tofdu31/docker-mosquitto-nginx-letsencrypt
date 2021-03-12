@@ -10,7 +10,7 @@ services:
        - "9001:9001"
     volumes:
       - ./mosquitto/data:/mosquitto/data
-      - ./mosquitto/logs:/mosquitto/logs
+      - ./mosquitto/log:/mosquitto/log
       - ./mosquitto/config:/mosquitto/config:ro
       - ./mosquitto/data/pwfile:/etc/mosquitto/pwfile
       - ./mosquitto/data:/var/lib/mosquitto
