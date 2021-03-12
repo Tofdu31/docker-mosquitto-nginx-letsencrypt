@@ -42,11 +42,11 @@ Edit and configure your mosquitto/config/mosquitto.conf
 a) sudo touch mosquitto/config/mosquitto.conf mosquitto/data/pwfile
 b) docker-compose up -d
 c) docker-compose exec mosquitto sh
-    C.1) >>> cd /etc/mosquitto
-    C.2) >>> mosquitto_passwd -b pwfile username password
-    C.3)>>> cat pwfile
-    C.4)username:$6$IuF7JUzS1k/QoF3y$YpiClom7/==
-    C.5)>>> exit
+>>> cd /etc/mosquitto
+>>> mosquitto_passwd -b pwfile username password
+>>> cat pwfile
+username:$6$IuF7JUzS1k/QoF3y$YpiClom7/==
+>>> exit
 
 d) docker-compose restart
 e) docker-compose logs -f
