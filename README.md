@@ -20,7 +20,24 @@ https://github.com/evertramos/docker-compose-letsencrypt-nginx-proxy-companion
 And after :
     git clone https://github.com/Tofdu31/docker-mosquitto-nginx-letsencrypt
     
-CONFUGURE FILES
+Configure files projet Mosquitto
 ---------------------
 
-First rename .env.sample .env
+1: Configure .env
+---------------------
+Open .env and change :
+
+a) DOMAINS=mqtt.yourdomain.com
+
+b) LETSENCRYPT_EMAIL=replace@thisemail.com
+
+C) save .env
+
+2 : Custom your mosquitto.conf
+---------------------
+Edit and configure your mosquitto/config/mosquitto.conf
+
+3 : Start the container
+---------------------
+Start with : sudo docker-compose up -d
+
