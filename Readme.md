@@ -47,7 +47,7 @@ c) docker-compose exec mosquitto sh
 
 cd /etc/mosquitto
 
-mosquitto_passwd -b pwfile username password
+mosquitto_passwd -b pwfile PUT_USERNAME_HERE PUT-THE_PASSWORD_HERE
 
 cat pwfile
 
