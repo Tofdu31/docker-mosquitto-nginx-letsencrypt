@@ -17,6 +17,10 @@ This version use the projet of EvertRamos : docker-compose-letsencrypt-nginx-pro
 Please install first evertramos/docker-compose-letsencrypt-nginx-proxy-companion
 https://github.com/evertramos/docker-compose-letsencrypt-nginx-proxy-companion
 
+And after :
     git clone https://github.com/Tofdu31/docker-mosquitto-nginx-letsencrypt
     
-Configure files projet Mumble Server
+CONFUGURE FILES
+---------------------
+
+First rename .env.sample .env
