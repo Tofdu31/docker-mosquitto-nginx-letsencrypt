@@ -1,0 +1,23 @@
+version: '3.5'
+services:
+  mosquitto:
+    container_name: ${CONTAINER_MQTT_WEB}
+    image: eclipse-mosquitto:latest
+    restart: always
+    ports:
+       - "1883:1883"
+       - "9001:9001"
+    volumes:
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/logs:/mosquitto/logs
+      - ./mosquitto/config:/mosquitto/config:ro
+    environment:
+      - DOMAIN= ${DOMAINS}
+      - VIRTUAL_HOST= ${DOMAINS}
+      - LETSENCRYPT_HOST= ${DOMAINS}
+      - LETSENCRYPT_EMAIL= ${LETSENCRYPT_EMAIL}
+
+networks:
+    default:
+       external:
+         name: ${NETWORK}
