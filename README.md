@@ -1,7 +1,3 @@
-# docker-mosquitto-nginx-letsencrypt
-
-
-
 docker-mumble-NGINX-Let's Encrypt
 =============
 
