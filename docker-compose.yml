@@ -16,7 +16,8 @@ services:
       - ./mosquitto/log:/mosquitto/log
     environment:
       - TZ="Europe/Paris"
-      - PGID=1002 -e PUID=1002
+      - PGID=1002
+      - PUID=1002
       - MQTTHOSTNAME= ${DOMAINS}
       - DOMAIN= ${DOMAINS}
       - VIRTUAL_HOST= ${DOMAINS}
