@@ -6,16 +6,18 @@ services:
     restart: always
     ports:
        - "1883:1883"
-       - "8883:8883"
        - "9001:9001"
+       - "8883:8883"
     volumes:
+      - ./mosquitto/config/mosquitto.conf:/etc/mosquitto/mosquitto.conf
+      - ./mosquitto/data/pwfile:/etc/mosquitto/pwfile
+      - ./mosquitto:/var/lib/mosquitto
       - ./mosquitto/data:/mosquitto/data
       - ./mosquitto/log:/mosquitto/log
-      - ./mosquitto/config:/mosquitto/config:ro
-      - ./mosquitto/data/pwfile:/etc/mosquitto/pwfile
-      - ./mosquitto/data:/var/lib/mosquitto
     environment:
-      - FR=Europe/Paris
+      - TZ="Europe/Paris"
+      - PGID=1002 -e PUID=1002
+      - MQTTHOSTNAME= ${DOMAINS}
       - DOMAIN= ${DOMAINS}
       - VIRTUAL_HOST= ${DOMAINS}
       - LETSENCRYPT_HOST= ${DOMAINS}
