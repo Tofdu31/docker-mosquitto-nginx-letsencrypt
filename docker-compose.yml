@@ -1,22 +1,25 @@
 version: '3.5'
 services:
   mosquitto:
-    container_name: ${CONTAINER_MQTT_WEB}
     image: eclipse-mosquitto:latest
-    restart: always
+    hostname: mosquitto
+    container_name: mosquitto
+    expose:
+      - "1883"
+      - "9001"
     ports:
-       - "1883:1883"
-       - "8883:8883"
+      - "1883:1883"
+      - "9001:9001"
     volumes:
-      - ./mosquitto/config/mosquitto.conf:/etc/mosquitto/mosquitto.conf
+      - ./mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf
       - ./mosquitto/data/pwfile:/etc/mosquitto/pwfile
-      - ./mosquitto:/var/lib/mosquitto
       - ./mosquitto/data:/mosquitto/data
       - ./mosquitto/log:/mosquitto/log
     environment:
       - TZ="Europe/Paris"
       - PGID=1002
       - PUID=1002
+      - net=mqtt.nbility.fr
       - MQTTHOSTNAME= ${DOMAINS}
       - DOMAIN= ${DOMAINS}
       - VIRTUAL_HOST= ${DOMAINS}
