@@ -10,21 +10,26 @@ services:
     ports:
       - "1883:1883"
       - "9001:9001"
+      - "8883:8883"
     volumes:
       - ./mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf
-      - ./mosquitto/data/pwfile:/etc/mosquitto/pwfile
+      - ./mosquitto/data/pwfile:/mosquitto/data/pwfile
       - ./mosquitto/data:/mosquitto/data
       - ./mosquitto/log:/mosquitto/log
+      - ./mosquitto/config/ca_certificates:/mosquitto/certs
     environment:
       - TZ="Europe/Paris"
       - PGID=1002
       - PUID=1002
       - net=mqtt.nbility.fr
       - MQTTHOSTNAME= ${DOMAINS}
+      - MQTT_HOSTNAME= ${DOMAINS}
       - DOMAIN= ${DOMAINS}
       - VIRTUAL_HOST= ${DOMAINS}
       - LETSENCRYPT_HOST= ${DOMAINS}
       - LETSENCRYPT_EMAIL= ${LETSENCRYPT_EMAIL}
+      - MQTT_CERT_DIR=~/Docker/docker-compose-letsencrypt-nginx-proxy-companion/nginx-data/certs/mqtt.nbility.fr
+      - MQTT_CERT_OWNERSHIP="docker:users"
 
 networks:
     default:
